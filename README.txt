@@ -72,4 +72,4 @@ The dashboard will open in a new tab.
 - If dataset is very large, rendering might slow down (consider sampling data).
 - Do not expose sensitive data (e.g., profit margins) if sharing this dashboard publicly.
 
-Live Dashboard: https://your-dash-app.vercel.app
+Live Dashboard: https://sales-dashboard-five-gamma.vercel.app/

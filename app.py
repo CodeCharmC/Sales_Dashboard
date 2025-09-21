@@ -1,11 +1,20 @@
 import pandas as pd
 from dash import Dash, dcc, html, Input, Output, dash_table, State
 import plotly.express as px
+from sqlalchemy import create_engine
+import os
 
-CSV_PATH = "sales.csv" 
+# Get DATABASE_URL from environment variable
+DATABASE_URL = os.environ.get("DATABASE_URL")
+if not DATABASE_URL:
+   raise ValueError("DATABASE_URL environment variable is not set!")
 
-def load_data(path=CSV_PATH):
-   df = pd.read_csv(path, parse_dates=["OrderDate"])
+# Create SQLAlchemy engine
+engine = create_engine(DATABASE_URL)
+
+def load_data():
+   # Query all sales data from Neon
+   df = pd.read_sql("SELECT * FROM sales", engine, parse_dates=["OrderDate"])
 
    # Drop missing values
    if df.isnull().values.any():

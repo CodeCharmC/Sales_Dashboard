@@ -3,15 +3,6 @@ ___ Dashboard for Sales Analysis ___
 
 📌This project provides an interactive sales dashboard built with Python, Dash, and Plotly.
 
-📂 Files Included
-- sales.csv → Cleaned dataset (duplicates removed, missing values handled)
-- dash/ (main project folder)
-   |- app.py → Main Python code for the dashboard
-   |- assets/
-      |- style.css → Custom styles for the dashboard
-   |- requirements.txt → Python dependencies
-   |- README.txt → This documentation
-
 ▶ Steps to Run
 1. Make sure you have Python 3.8+ installed.
 2. Install the required dependencies:
@@ -34,9 +25,11 @@ The dashboard will open in a new tab.
 - Revenue by Region → Bar chart summarizing sales across regions
 - Revenue Trend → Line chart of monthly sales trends
 - Top Products → Horizontal bar chart of the top 10 products
+- Profit margins → Shows bar chart for profit margins by categoris
 - Recent Orders Table → Interactive table with pagination
 
 📦 requirements.txt
+# for running app.py locally
 - Here are the dependencies you should list in requirements.txt:
    ```bash
    dash
@@ -48,6 +41,14 @@ The dashboard will open in a new tab.
    pandas==2.2.2
    dash==2.17.0
    plotly==5.24.0
+   ```
+# for uploading on vercel
+   ```bash
+   psycopg2-binary
+   pandas
+   dash
+   plotly
+   werkzeug
    ```
 
 📝 README.txt
@@ -70,3 +71,5 @@ The dashboard will open in a new tab.
 - Ensure sales.csv is pre-cleaned (duplicates removed, missing values handled).
 - If dataset is very large, rendering might slow down (consider sampling data).
 - Do not expose sensitive data (e.g., profit margins) if sharing this dashboard publicly.
+
+Live Dashboard: https://your-dash-app.vercel.app
